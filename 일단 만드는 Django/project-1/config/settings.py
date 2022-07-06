@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
+import os, json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,14 +55,16 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-
+    'myapp',
+    'board',
+    'product',
 ]
 
 THIRDPARTY_APPS = [ 
 
 ]
 
-INSTALLED_APP = DJANGO_APPS + PROJECT_APPS + THIRDPARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRDPARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
